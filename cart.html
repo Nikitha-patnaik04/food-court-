@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart | Recipe Finder</title>
+    <link rel="stylesheet" href="C:\Users\narasimha\Documents\food court\recipe\css\cart.css">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+                <span>Recipe Finder</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="cart-icon">
+                    <a href="cart.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <div class="cart-dropdown">
+                        <div class="cart-items">
+                            <!-- Cart items will appear here -->
+                        </div>
+                        <div class="cart-total">
+                            Total: $<span>0.00</span>
+                        </div>
+                        <a href="cart.html" class="btn view-cart">View Cart</a>
+                    </div>
+                </li>
+                <li><a href="login.html" class="btn-nav">Login</a></li>
+            </ul>
+            <div class="burger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="cart-container">
+        <div class="cart-header">
+            <h1>Your Cart</h1>
+            <a href="recipes.html" class="btn btn-outline">Continue Shopping</a>
+        </div>
+        
+        <div class="cart-items" id="cart-items-container">
+            <!-- Cart items will be loaded here -->
+            <div class="empty-cart">
+                <i class="fas fa-shopping-cart"></i>
+                <h2>Your cart is empty</h2>
+                <p>Browse our recipes and add some delicious meals to your cart!</p>
+                <a href="recipes.html" class="btn">Explore Recipes</a>
+            </div>
+        </div>
+        <div class="recipe-info">
+            <h1 id="detail-recipe-title">Recipe Title</h1>
+            <span class="recipe-cuisine" id="detail-recipe-cuisine">Cuisine</span>
+            <button class="btn add-to-cart" id="add-to-cart">
+                <i class="fas fa-shopping-cart"></i> Add to Cart - $9.99
+            </button>
+            <p class="recipe-description" id="detail-recipe-desc">Recipe description goes here</p>
+            <!-- ... rest of your existing code ... -->
+        </div>
+        
+        <div class="cart-summary" id="cart-summary" style="display: none;">
+            <div class="summary-row">
+                <span>Subtotal:</span>
+                <span>$<span id="subtotal">0.00</span></span>
+            </div>
+            <div class="summary-row">
+                <span>Shipping:</span>
+                <span>$<span id="shipping">0.00</span></span>
+            </div>
+            <div class="summary-row summary-total">
+                <span>Total:</span>
+                <span>$<span id="total">0.00</span></span>
+            </div>
+            <a href="checkout.html" class="btn checkout-btn">Proceed to Checkout</a>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Your existing footer -->
+    </footer>
+
+    <script src="C:\Users\narasimha\Documents\food court\recipe\css\js\cart.js"></script>
+              
+</body>
+</html>

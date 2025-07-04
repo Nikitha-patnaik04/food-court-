@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE DAILY DISH | Indian, Chinese & American Recipes</title>
+    <link rel="stylesheet" href="C:\Users\narasimha\Documents\food court\recipe\css\recipes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <i>Welcome to My Website <i class="fas fa-smile"></i></i>
+    <div class="background-overlay"></div>
+    
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="C:\Users\narasimha\Documents\food court\recipe\logo-transparent.png" width="100" height="100">
+                <i class="fas fa-utensils"></i>
+                <span>THE DAILY DISH</span>
+            </div>
+            <ul class="nav-links">
+                    <li><a href="C:\Users\narasimha\Documents\food court\recipe\css\index.html">Home</a></li>
+                    <li><a href="C:\Users\narasimha\Documents\food court\recipe\css\about.html">About</a></li>
+                    <li><a href="C:\Users\narasimha\Documents\food court\recipe\css\contact.html">Contact</a></li>
+                    <li><a href="C:\Users\narasimha\Documents\food court\recipe\css\login.html">login</a></li>
+                    <li><a href="C:\Users\narasimha\Documents\food court\recipe\css\signup.html">signup</a></li>
+                    <li class="cart-icon">
+                        <a href="C:\Users\narasimha\Documents\food court\recipe\css\cart.html">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                        <div class="cart-dropdown">
+                            <div class="cart-items">
+                            </div>
+                            <div class="cart-total">
+                                <span></span>
+                            </div>
+                            <a href="C:\Users\narasimha\Documents\food court\recipe\css\cart.html" class="btn view-cart"></a>
+                        </div>
+                
+            </ul>
+            <div class="burger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Discover World Cuisines</h1>
+            <p>Authentic recipes from India, China, and America</p>
+            <button class="explore-btn">Explore Recipes</button>
+        </section>
+
+        <section class="featured-recipes">
+            <h2>Popular Recipes</h2>
+            <div class="recipe-filter">
+                
+                <button class="filter-btn" data-cuisine="indian">Indian</button>
+                <button class="filter-btn" data-cuisine="chinese">Chinese</button>
+                <button class="filter-btn" data-cuisine="american">American</button>
+            </div>
+            <div class="recipes-container" id="recipes-container">
+                <div class="recipe-card">
+                    <img src="recipe-image.jpg" alt="Butter Chicken" class="recipe-img">
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Butter Chicken</h3>
+                        <span class="recipe-cuisine indian">Indian</span>
+                        <p class="recipe-desc">Creamy tomato-based curry with tender chicken pieces...</p>
+                        <a href="C:\Users\narasimha\Documents\food court\recipe\css\viwe.html" class="view-recipe">View Recipe</a>
+                    </div>
+                    
+                </div>
+                <!-- Recipes will be loaded here by JavaScript -->
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <h2>About THE DAILY DISH</h2>
+            <p>We bring you authentic recipes from three of the world's most popular cuisines. Whether you're craving the spicy flavors of India, the delicate balance of Chinese dishes, or the comforting classics of American cooking, you'll find it all here.</p>
+            <div class="cuisine-cards">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Indian Cuisine">
+                    <h3>Indian Cuisine</h3>
+                    <p>Rich in spices and flavors, Indian food offers a diverse range of vegetarian and non-vegetarian dishes.</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Chinese Cuisine">
+                    <h3>Chinese Cuisine</h3>
+                    <p>Balanced flavors and textures with a focus on fresh ingredients and quick cooking techniques.</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="American Cuisine">
+                    <h3>American Cuisine</h3>
+                    <p>Comfort food classics with regional specialties from across the United States.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#">Recipes</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Subscribe to get weekly recipes</p>
+                <form>
+                    <input type="email" placeholder="Your Email">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 THE DAILY DISH. All rights reserved.</p>
+            <br>
+            <h1>NSRIT</h1>
+        </div>
+    </footer>
+
+    <script src="C:\Users\narasimha\Documents\food court\recipe\css\js\recipes.js"></script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Details | Recipe Finder</title>
+    <style>
+        .recipe-hero {
+            display: flex;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .recipe-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 400px;
+        }
+        
+        .recipe-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .recipe-info {
+            flex: 1;
+        }
+        
+        .recipe-meta {
+            display: flex;
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .ingredients-section, .instructions-section {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        
+        .ingredient-list {
+            columns: 2;
+            list-style-type: none;
+        }
+        
+        .ingredient-list li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .ingredient-list li:before {
+            content: "•";
+            color: #ff6b6b;
+            position: absolute;
+            left: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .recipe-hero {
+                flex-direction: column;
+            }
+            
+            .recipe-image {
+                height: 300px;
+            }
+            
+            .ingredient-list {
+                columns: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-overlay"></div>
+    
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+                <span>Recipe Finder</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="btn-nav">Login</a></li>
+            </ul>
+            <div class="burger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="back-link">
+            <a href="recipes.html"><i class="fas fa-arrow-left"></i> Back to Recipes</a>
+        </div>
+        
+        <article class="recipe-detail">
+            <div class="recipe-hero">
+                <div class="recipe-image">
+                    <img src="" alt="" id="detail-recipe-image">
+                </div>
+                <div class="recipe-info">
+                    <h1 id="detail-recipe-title">Recipe Title</h1>
+                    <span class="recipe-cuisine" id="detail-recipe-cuisine">Cuisine</span>
+                    <p class="recipe-description" id="detail-recipe-desc">Recipe description goes here</p>
+                    
+                    <div class="recipe-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-clock"></i>
+                            <span id="detail-prep-time">20 mins</span> prep
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-fire"></i>
+                            <span id="detail-cook-time">30 mins</span> cook
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-users"></i>
+                            <span id="detail-servings">4</span> servings
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ingredients-section">
+                <h2><i class="fas fa-carrot"></i> Ingredients</h2>
+                <ul class="ingredient-list" id="ingredient-list">
+                    <!-- Ingredients will be added by JavaScript -->
+                </ul>
+            </div>
+            
+            <div class="instructions-section">
+                <h2><i class="fas fa-list-ol"></i> Instructions</h2>
+                <ol class="instruction-list" id="instruction-list">
+                    <!-- Instructions will be added by JavaScript -->
+                </ol>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Your existing footer -->
+    </footer>
+
+    <script src="C:\Users\narasimha\Documents\food court\recipe\css\js\view.js"></script>
+    <script>
+        // Get recipe ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const recipeId = urlParams.get('id');
+        
+        // Sample recipe data - in a real app, you'd fetch this from a database
+        const recipes = {
+            '1': {
+                title: "Butter Chicken",
+                cuisine: "Indian",
+                image: "https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+                description: "Creamy tomato-based curry with tender chicken pieces, a North Indian favorite.",
+                prepTime: "20 mins",
+                cookTime: "30 mins",
+                servings: 4,
+                ingredients: [
+                    "500g chicken thighs, cubed",
+                    "1 cup yogurt",
+                    "2 tbsp lemon juice",
+                    "2 tsp garam masala",
+                    "1 tsp turmeric",
+                    "2 tbsp butter",
+                    "1 onion, diced",
+                    "3 garlic cloves, minced",
+                    "1 tbsp ginger, grated",
+                    "1 can (400g) tomato puree",
+                    "1 cup heavy cream",
+                    "1 tsp chili powder",
+                    "Salt to taste",
+                    "Fresh cilantro for garnish"
+                ],
+                instructions: [
+                    "Marinate chicken with yogurt, lemon juice, 1 tsp garam masala, and turmeric for at least 1 hour.",
+                    "Melt butter in a large pan over medium heat. Cook onion until soft.",
+                    "Add garlic and ginger, cook for 1 minute until fragrant.",
+                    "Add tomato puree and cook for 5 minutes.",
+                    "Add chicken with marinade and cook for 10 minutes.",
+                    "Add cream, remaining garam masala, and chili powder. Simmer for 10 minutes.",
+                    "Garnish with cilantro and serve with naan or rice."
+                ]
+            },
+            '2': {
+                title: "Kung Pao Chicken",
+                cuisine: "Chinese",
+                image: "https://images.unsplash.com/photo-1563245372-f21724e3856d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+                description: "Spicy, sweet, and savory stir-fry with chicken, peanuts, and vegetables.",
+                prepTime: "15 mins",
+                cookTime: "10 mins",
+                servings: 3,
+                ingredients: [
+                    "500g chicken breast, cubed",
+                    "2 tbsp soy sauce",
+                    "1 tbsp rice wine",
+                    "1 tsp cornstarch",
+                    "2 tbsp vegetable oil",
+                    "1 red bell pepper, diced",
+                    "1/2 cup roasted peanuts",
+                    "3 dried red chilies",
+                    "2 garlic cloves, minced",
+                    "1 tsp ginger, grated",
+                    "1 tbsp hoisin sauce",
+                    "1 tsp sugar",
+                    "2 green onions, sliced"
+                ],
+                instructions: [
+                    "Marinate chicken with soy sauce, rice wine, and cornstarch for 15 minutes.",
+                    "Heat oil in a wok over high heat. Add chicken and stir-fry until cooked. Remove and set aside.",
+                    "In same wok, add chilies, garlic, and ginger. Stir-fry for 30 seconds.",
+                    "Add bell pepper and stir-fry for 2 minutes.",
+                    "Return chicken to wok. Add hoisin sauce and sugar. Toss to combine.",
+                    "Add peanuts and green onions. Stir-fry for 1 more minute.",
+                    "Serve hot with steamed rice."
+                ]
+            }
+        };
+        
+        // Load recipe data
+        function loadRecipe() {
+            const recipe = recipes[recipeId];
+            if (recipe) {
+                document.getElementById('detail-recipe-title').textContent = recipe.title;
+                document.getElementById('detail-recipe-cuisine').textContent = recipe.cuisine;
+                document.getElementById('detail-recipe-cuisine').className = `recipe-cuisine ${recipe.cuisine.toLowerCase()}`;
+                document.getElementById('detail-recipe-image').src = recipe.image;
+                document.getElementById('detail-recipe-image').alt = recipe.title;
+                document.getElementById('detail-recipe-desc').textContent = recipe.description;
+                document.getElementById('detail-prep-time').textContent = recipe.prepTime;
+                document.getElementById('detail-cook-time').textContent = recipe.cookTime;
+                document.getElementById('detail-servings').textContent = recipe.servings;
+                
+                // Add ingredients
+                const ingredientList = document.getElementById('ingredient-list');
+                recipe.ingredients.forEach(ingredient => {
+                    const li = document.createElement('li');
+                    li.textContent = ingredient;
+                    ingredientList.appendChild(li);
+                });
+                
+                // Add instructions
+                const instructionList = document.getElementById('instruction-list');
+                recipe.instructions.forEach((instruction, index) => {
+                    const li = document.createElement('li');
+                    li.textContent = instruction;
+                    instructionList.appendChild(li);
+                });
+            } else {
+                // Recipe not found
+                document.querySelector('main').innerHTML = `
+                    <div class="error-message">
+                        <h2>Recipe Not Found</h2>
+                        <p>The requested recipe could not be found.</p>
+                        <a href="recipes.html" class="btn">Browse All Recipes</a>
+                    </div>
+                `;
+            }
+        }
+        
+        // Load recipe when page loads
+        window.onload = loadRecipe;
+    </script>
+</body>
+</html>
